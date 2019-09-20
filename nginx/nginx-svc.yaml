@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx-nodeport
+  name: nginx-nodeport
+spec:
+  ports:
+  - name: 30109-80
+    port: 30109
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-nodeport
+  type: NodePort
